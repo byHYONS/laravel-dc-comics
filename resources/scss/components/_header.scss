@@ -1,3 +1,44 @@
 /* --------------------------------
             HEADER
 -------------------------------- */
+
+
+header {
+    height: 100px;
+    background-color: $header;
+    .container {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+
+            height: 100%;
+
+            img{
+               width: 28%;
+               height: auto; 
+               filter: sepia(5) saturate(25) hue-rotate(33deg) brightness(1.2);
+            //    filter: grayscale(50);
+            }
+        }
+        nav {
+            
+            li {
+                margin-right: 15px;
+                text-decoration: none;
+                display: inline-block;
+                &:hover {transform: scale(1.2);}
+                a {
+                    color: $text-h;
+                    font-size: 25px;
+                    transition:  .8s ;
+                }
+            }
+        }
+    }
+
+
+
+
+}
