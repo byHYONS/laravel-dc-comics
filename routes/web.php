@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\ComicController;
 use App\Http\Controllers\Guest\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,6 @@ use Illuminate\Support\Facades\Route;
 
 //? rotta per la home:
 Route::get('/', [PageController::class, 'index'])->name('home');
+
+//? rotta di controller resource:
+Route::resource('comics', ComicController::class);
