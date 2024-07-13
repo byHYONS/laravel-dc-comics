@@ -2,4 +2,129 @@
             FOOTER
 -------------------------------- */
 
+footer {
 
+    .footer {
+        padding: 35px;
+        position: relative;
+        background-image: url('../img/footer.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
+        align-items: center;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: $footer, $alpha: .8);
+            
+        }
+
+        .col-33 {
+            padding: 25px 100px;
+            @include col-x(3, 30px);
+            
+            .logo {
+                z-index: 100;
+
+                img {
+                    width: 20%;
+                    height: auto;
+                    filter: brightness(100) saturate(.5);
+                }
+                h3 {
+                    position: relative;
+                    color: $jolly;
+                    margin-top: 20px;
+                    font-size: 28px;
+                    z-index: 100;
+                }
+                hr {
+                    @extend h3;
+                    border: 2px solid;
+                    width: 35%;
+                }
+                p {
+                    @extend h3;
+                    font-size: 15px;
+                }
+            }
+            nav {
+                text-align: center;
+                a {
+                    display: inline-block;
+                    position: relative;
+                    color: $jolly;
+                    font-size: 18px;
+                    margin-bottom: 15px;
+                    transition: .3s;
+
+                    &:hover {
+                        color: $header;
+                        transform: scale(1.2);
+                    }
+                }
+            }
+            .search {
+                text-align: end;
+                position: relative;
+                border: none;
+                input {
+                    padding: 8px 15px;
+                    height: 35px;
+                    outline: none;
+                    border: none;
+                }
+
+                h4 {
+                    position: relative;
+                    color: $jolly;
+                    font-size: 20px;
+                    z-index: 10;
+                }
+                input.button {
+                    margin-top: 8px;
+                    padding: 1px 15px;
+                    background-color: $header;
+                    color: $footer;
+
+                    &:hover {
+                        opacity: .8;
+                    }
+                }
+            }
+        }
+    }
+    .socket {
+        height: 80px;
+        background-color: $footer;
+        text-align: center;
+        color: $jolly;
+        line-height: 80px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    footer {
+        .footer {
+            flex-direction: column;
+            align-items: center;
+            height: auto;
+            .col-33 {
+                width: 100%;
+                .logo {text-align: center;}
+                nav {text-align: center;}
+                .search {text-align: center;}
+            }
+        }
+    }
+}

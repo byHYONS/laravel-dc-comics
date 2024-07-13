@@ -6,20 +6,19 @@
 header {
     height: 100px;
     background-color: $header;
+    @extend %shadow;
     .container {
         padding: 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         .logo {
-
             height: 100%;
 
             img{
                width: 28%;
                height: auto; 
-               filter: sepia(5) saturate(25) hue-rotate(33deg) brightness(1.2);
-            //    filter: grayscale(50);
+               filter: brightness(.8) saturate(.5);
             }
         }
         nav {
@@ -28,17 +27,14 @@ header {
                 margin-right: 15px;
                 text-decoration: none;
                 display: inline-block;
-                &:hover {transform: scale(1.2);}
+                &:hover {transform: scale(1.2); font-weight: 600;}
                 a {
-                    color: $text-h;
+                    color: $text-h_2;
                     font-size: 25px;
-                    transition:  .8s ;
+                    transition:  .2s ;
                 }
             }
         }
     }
-
-
-
 
 }
