@@ -29,7 +29,6 @@
                     @csrf
                     <h4>Search</h4>
                     <div>
-                        {{-- <span><i class="fab fa-sistrix"></i></span> --}}
                         <input type="text" name="search">
                     </div>
                     <input class="button" type="submit" value="Search">

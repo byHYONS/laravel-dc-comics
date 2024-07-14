@@ -1,3 +1,4 @@
+{{-- ? index di PageController --}}
 @extends( 'layouts.app' )
 
 @section( 'content' )

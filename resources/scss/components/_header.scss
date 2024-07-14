@@ -7,6 +7,10 @@ header {
     height: 100px;
     background-color: $header;
     @extend %shadow;
+    position: sticky;
+    top: 0;
+    z-index: 300;
+    
     .container {
         padding: 10px;
         display: flex;
