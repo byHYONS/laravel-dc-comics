@@ -5,7 +5,7 @@
             <div class="logo">
                 <a href="{{route('comics.index')}}">
                     <img src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="logo">
-                    <h3>Comis Srl</h3>
+                    <h3>Comics Srl</h3>
                     <p>
                         Via dei Manga n 7 <br> 
                         21030 Varese 
@@ -17,7 +17,7 @@
             <nav>
                 <ul>
                     <li><a href="{{route('comics.index')}}">Home</a></li>
-                    <li><a href="{{route('comics.index')}}">Comic</a></li>
+                    <li><a href="{{route('comics.create')}}">Add Comics</a></li>
                     <li><a href="{{route('comics.index')}}">Price</a></li>
                     <li><a href="{{route('comics.index')}}">Contact</a></li>
                 </ul>

@@ -8,7 +8,7 @@
         <nav>
             <ul>
                 <li><a href="{{route('comics.index')}}">Home</a></li>
-                <li><a href="{{route('comics.index')}}">Comic</a></li>
+                <li><a href="{{route('comics.create')}}">Add Comics</a></li>
                 <li><a href="{{route('comics.index')}}">Price</a></li>
                 <li><a href="{{route('comics.index')}}">Contact</a></li>
             </ul>

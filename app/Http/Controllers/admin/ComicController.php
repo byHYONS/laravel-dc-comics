@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class ComicController extends Controller
 {
@@ -34,12 +35,17 @@ class ComicController extends Controller
           
         $data = $request->all();
 
+        //? aggiungo il dollaro al prezzo
+        $formattedPrice = '$' . $data['price'];
+        //? Trasformo la data utilizzando Carbon:
+        // $formattedDate = Carbon::createFromFormat('d/m/Y', $data['sale_date'])->format('Y-m-d');
+
         $comic = new Comic();
 
         $comic->title = $data['title'];
         $comic->description = $data['description'];
         $comic->thumb = $data['thumb'];
-        $comic->price = $data['price'];
+        $comic->price = $formattedPrice;
         $comic->series = $data['series'];
         $comic->sale_date = $data['sale_date'];
         $comic->type = $data['type'];
@@ -65,7 +71,8 @@ class ComicController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
+
     }
 
     /**

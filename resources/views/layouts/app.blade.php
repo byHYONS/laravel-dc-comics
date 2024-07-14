@@ -16,6 +16,7 @@
 
         @yield('content')
         @yield('show')
+        @yield('edit')
     
     {{-- <img src="{{ Vite::asset('resources/img/logo.png') }}" alt=""> --}}
     
