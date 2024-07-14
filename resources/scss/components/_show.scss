@@ -1,0 +1,61 @@
+
+.show {
+    width: 100%;
+    .cards {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 80%;
+        border-radius: 20px;
+        @extend %shadow;
+        overflow: hidden;
+        background-color: $jolly;
+        
+        .image {
+            align-content: start;
+            width: 42%;
+            padding: 0px;
+        
+
+            img {
+                width: 90%;
+                height: auto;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        .info {
+            width: 58%;
+            padding: 35px 45px 35px 15px;
+            overflow: scroll;
+
+            h3 {
+                margin-bottom: 20px;
+                font-size: 30px;
+                color: $text-h;
+                font-weight: 900;
+            }
+            hr{
+                width: 100%;
+                border: none;
+                height: 3px;
+                background-color: $footer;
+                margin-bottom: 35px;
+            }
+            
+            span {
+                color: $text-h;
+                font-weight: 600;
+            }
+
+            a {
+                margin-top: 25px;
+                display: inline-block;
+                padding: 10px 40px;
+                border-radius: 15px;
+                background-color: $text-h;
+                color: $jolly;
+            }
+        }
+    }
+}

@@ -15,6 +15,7 @@
     @include('shared.header')
 
         @yield('content')
+        @yield('show')
     
     {{-- <img src="{{ Vite::asset('resources/img/logo.png') }}" alt=""> --}}
     
