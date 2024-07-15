@@ -1,3 +1,18 @@
 // common:
 
 body {@include checkerboard(35px, $bg_1, $jolly); }
+
+.no-scroll {overflow: hidden;}
+
+//? per modale:
+.screen.holding {display: none;}
+.holding {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: $footer, $alpha: .7);
+    z-index: 100;
+}

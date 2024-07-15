@@ -11,16 +11,21 @@
     <title>byHYONS</title>
     @vite('resources/js/app.js')
 </head>
-<body>
-    @include('shared.header')
+    <body>
 
-        @yield('content')
-        @yield('show')
-        @yield('create')
-        @yield('edit')
-    
-    {{-- <img src="{{ Vite::asset('resources/img/logo.png') }}" alt=""> --}}
-    
-    @include('shared.footer')
-</body>
+        {{--? header  --}}
+        @include('shared.header')
+            
+            {{--? sezione dell'applicativo  --}}
+            @yield('content')
+            @yield('show')
+            @yield('create')
+            @yield('edit')
+            
+            {{-- <img src="{{ Vite::asset('resources/img/logo.png') }}" alt=""> --}}
+        
+        {{--? footer  --}}
+        @include('shared.footer')
+        
+    </body>
 </html>

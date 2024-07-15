@@ -6,12 +6,15 @@
 
         <div class="edit__form">
 
+            {{--? bottone per tornare indietro  --}}
             <div class="head">
                 <a class="show" href="{{route('comics.show', $comic)}}">Back to the info</a>
             </div>
+
             <h2>Edit Comics:</h2>
             <hr>
 
+            {{--? form per modificare i dati --}}
             <form action="{{route('comics.update', $comic->id)}}" method="POST">
                 @csrf
                 @method('PUT')
@@ -30,7 +33,11 @@
                   </div>
                 <div class="mb-3">
                     <label for="price" class="form-label">Price: </label>
-                    <input type="number" step="0.01" class="form-control" id="price" name="price" value="{{ old('price', $comic->price)}}">
+                    <div class="group">
+                        {{--todo: il prezzo è una stringa  --}}
+                        {{-- <span class="group__text">$</span> --}}
+                        <input type="text" class="form-control group__input" id="price" name="price" value="{{ old('price', $comic->price) }}">
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="series" class="form-label">Series: </label>

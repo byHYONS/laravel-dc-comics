@@ -66,14 +66,108 @@
                 font-weight: 600;
             }
 
-            a {
+            a.edit {
                 margin-top: 25px;
                 display: inline-block;
                 padding: 10px 40px;
                 border-radius: 15px;
                 background-color: $text-h;
                 color: $jolly;
+                @extend %shadow;
+                &:hover {opacity: .9;}
+
+                &.edit {
+                    background-color: $header;
+                    color: $text-h_2;
+
+                    &:hover {
+                        filter: saturate(1.5);
+                    }
+                }
             }
+
+            .holding {display: none;}
+            .delete__modale{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: $jolly;
+                width: 500px;
+                border-radius: 15px;
+                padding: 35px;
+                text-align: center;
+                z-index: 200;
+                @extend %shadow;
+
+                span {
+                    position: absolute;
+                    right: 35px;
+                    top: 35px;
+                    font-size: 24px;
+                    font-weight: 900;
+                    color: $text-h_2;
+                    cursor: pointer;
+                }
+                h4 {
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: $text-h;
+                    margin-top: 60px;
+                }
+                form {text-align: center;}
+                input.delete {
+                    display: inline-block;
+                    margin-top: 25px;
+                    border: none;
+                    padding: 10px 40px;
+                    border-radius: 15px;
+                    background-color: $text-h;
+                    color: $jolly;
+                    @extend %shadow;
+                    &:hover {opacity: .9;}
+
+                    &.edit {
+                        background-color: $header;
+                        color: $text-h_2;
+
+                        &:hover {
+                            filter: saturate(1.5);
+                        }
+                    }
+                }
+
+            }
+
+
+            a.destroy {
+                margin-left: 20px;
+                display: inline-block;
+                margin-top: 25px;
+                border: none;
+                padding: 10px 40px;
+                border-radius: 15px;
+                background-color: $text-h;
+                color: $jolly;
+                @extend %shadow;
+                &:hover {opacity: .9;}
+
+                &.edit {
+                    background-color: $header;
+                    color: $text-h_2;
+
+                    &:hover {
+                        filter: saturate(1.5);
+                    }
+                }
+            }
+
+            .menage {
+                
+                display: flex;
+                
+            }
+
         }
     }
 }

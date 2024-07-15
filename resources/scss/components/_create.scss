@@ -64,5 +64,39 @@
             @extend %shadow;
             &:hover {opacity: .9;}
         }
+
+        .group {
+            display: flex;
+            align-items: center;
+
+            .group__text {
+                line-height: 34px;
+                height: 34px;
+                padding: 0 8px;
+                border: 1px solid $text-h;
+                border-right: none;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+
+            }
+            .group__input {
+                height: 34px;
+                padding: 0 8px;
+                border: 1px solid $text-h;
+                // border-left: none;
+                // border-top-left-radius: 0;
+                // border-bottom-left-radius: 0;
+                flex-grow: 1;
+                
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                    border: 3.5px solid rgba($color: $text-h, $alpha: .5);
+
+                }
+                
+            }
+            
+        }
     }
 }

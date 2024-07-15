@@ -36,7 +36,7 @@ class ComicController extends Controller
         $data = $request->all();
 
         //? aggiungo il dollaro al prezzo
-        $formattedPrice = '$' . $data['price'];
+        // $formattedPrice = '$' . $data['price'];
         //? Trasformo la data utilizzando Carbon:
         // $formattedDate = Carbon::createFromFormat('d/m/Y', $data['sale_date'])->format('Y-m-d');
 
@@ -45,7 +45,7 @@ class ComicController extends Controller
         $comic->title = $data['title'];
         $comic->description = $data['description'];
         $comic->thumb = $data['thumb'];
-        $comic->price = $formattedPrice;
+        $comic->price = $data['price'];
         $comic->series = $data['series'];
         $comic->sale_date = $data['sale_date'];
         $comic->type = $data['type'];
@@ -78,16 +78,22 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $data = $request->all();
+        $comic->update($data);
+
+        return redirect()->route('comics.show', $comic->id);
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+
+        return redirect()->route('comics.index');
     }
 }

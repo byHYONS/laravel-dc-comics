@@ -1,4 +1,7 @@
 {{--? pagina del dettaglio card --}}
+
+<div class="screen holding">
+ 
 @extends('layouts.app')
 
 @section('show')
@@ -50,9 +53,20 @@
 
                 <div class="button"></div>
                 {{--? torna alla lista --}}
-                {{-- <a class="show" href="{{route('comics.index')}}">Back to the list</a> --}}
                 <a class="edit" href="{{route('comics.edit', $comic)}}">Edit this item</a>
-                <a class="destroy" href="{{route('comics.destroy', $comic)}}">Delete this item</a>
+                <a class="destroy" href="#">Delete this item</a>
+
+                {{--? modale --}}
+                <div class="delete__modale holding">
+                    <span class="modale__exit">CLOSE</span>
+                    <h4>Are you sure you want to delete?</h4>
+                    <p>The cancellation action is ireversible</p>
+                    <form action="{{route('comics.destroy', $comic)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input class="delete" type="submit" value="Delete permanently">
+                    </form>
+                </div>
 
             </div>
         </div>
@@ -61,7 +75,7 @@
 
 @endsection
 
-
+</div> 
 
 
 

@@ -6,6 +6,7 @@
 
         <div class="create__form">
             <div class="head">
+                {{--? bottone per tornare alla lista  --}}
                 <a class="show" href="{{route('comics.index')}}">Back to the list</a>
             </div>
             <h2>Add Comics:</h2>
@@ -28,6 +29,7 @@
                   </div>
                 <div class="mb-3">
                     <label for="price" class="form-label">Price: </label>
+                    {{--todo: è una stringa nel DB  --}}
                     <input type="number" step="0.01" class="form-control" id="price" name="price">
                 </div>
                 <div class="mb-3">
