@@ -26,8 +26,26 @@
         }
         .info {
             width: 58%;
-            padding: 35px 45px 35px 15px;
+            padding: 35px 45px 45px 15px;
             overflow: scroll;
+
+            .head{
+                display: flex;
+                justify-content: end;
+    
+                a.show {
+                    width: 180px;
+                    text-align: center;
+                    display: inline-block;
+                    padding: 10px 30px;
+                    border-radius: 15px;
+                    background-color: $text-h_2;
+                    color: $jolly;
+                    margin-bottom: 25px;
+                    @extend %shadow;
+                    &:hover {opacity: .9;}
+                }
+            }
 
             h3 {
                 margin-bottom: 20px;

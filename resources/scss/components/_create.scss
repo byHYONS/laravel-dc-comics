@@ -1,12 +1,34 @@
+//? FILE CONDIVISIO:
+//? create.blade.php, edit.blade.php:
 
-.create {
+.create,
+.edit {
 
     background-color: $jolly;
     border-radius: 20px;
     @extend %shadow;
-    padding: 40px 50px;
+    padding: 60px 50px;
 
-    .create__form {
+    .create__form,
+    .edit__form {
+        .head{
+            display: flex;
+            justify-content: end;
+
+            a.show {
+                width: 200px;
+                text-align: center;
+                display: inline-block;
+                padding: 10px 30px;
+                border-radius: 15px;
+                background-color: $text-h_2;
+                color: $jolly;
+                margin-bottom: 25px;
+                @extend %shadow;
+                &:hover {opacity: .9;}
+            }
+        }
+
         h2{
             font-size: 35px;
             font-weight: 600;
@@ -39,6 +61,8 @@
             border-radius: 15px;
             background-color: $text-h;
             color: $jolly;
+            @extend %shadow;
+            &:hover {opacity: .9;}
         }
     }
 }

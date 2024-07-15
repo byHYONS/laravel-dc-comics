@@ -13,6 +13,10 @@
 
             {{--? informazioni del dettaglio --}}
             <div class="info">
+                {{--? bottone per tornare indietro alla lista --}}
+                <div class="head">
+                    <a class="show" href="{{route('comics.index')}}">Back to the list</a>
+                </div>
                 <h3>{{$comic->title}}</h3>
                 <hr>
                 <p>
@@ -44,8 +48,11 @@
                     {{$comic->price}}
                 </p>
 
+                <div class="button"></div>
                 {{--? torna alla lista --}}
-                <a href="{{route('comics.index')}}">Torna alla lista</a>
+                {{-- <a class="show" href="{{route('comics.index')}}">Back to the list</a> --}}
+                <a class="edit" href="{{route('comics.edit', $comic)}}">Edit this item</a>
+                <a class="destroy" href="{{route('comics.destroy', $comic)}}">Delete this item</a>
 
             </div>
         </div>

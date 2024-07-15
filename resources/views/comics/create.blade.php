@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
-@section('show')
+@section('create')
 <main>
     <div class="container create">
 
         <div class="create__form">
-
+            <div class="head">
+                <a class="show" href="{{route('comics.index')}}">Back to the list</a>
+            </div>
             <h2>Add Comics:</h2>
             <hr>
 
@@ -52,6 +54,7 @@
                 <input class="submit" type="submit" class="btn " value="Create Comics">
     
             </form>
+            
     </div>
     
 
