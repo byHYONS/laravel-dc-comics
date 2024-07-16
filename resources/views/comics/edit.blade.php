@@ -43,7 +43,7 @@
                   </div>
                   <div class="mb-3">
                       <label for="description" class="form-label">Description: </label>
-                      <textarea class="form-control" name="description @if($errors->get('description')) is-invalid @endif" id="description" rows="3">{{ old('description', $comic->description)}}</textarea>
+                      <textarea class="form-control @if($errors->get('description')) is-invalid @endif" name="description" id="description" rows="3">{{ old('description', $comic->description)}}</textarea>
                       @if ($errors->get('description'))
                         @foreach ($errors->get('description') as $message)
                             <div class="invalid-feedback">

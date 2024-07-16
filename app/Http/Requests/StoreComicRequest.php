@@ -33,6 +33,24 @@ class StoreComicRequest extends FormRequest
             'writers' => 'required|string',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Il titolo è obbligatorio',
+            'title.min' => 'Il titolo deve essere più di 3 caratteri',
+            'title.max' => 'Il titolo deve essere lunggo massimo 100 caratteri',
+            'description.required' => 'La descrizione è obbligatoria',
+            'thumb.required' => 'L\'immagine è obbligatoria',
+            'price.required' => 'Il prezzo è obbligatorio',
+            'series.required' => 'La serie è obbligatoria',
+            'sale_date.required' => 'La data è obbligatoria',
+            'sale_date.data' => 'Inserisci il formato data',
+            'type.required' => 'Il tipo è obbligatorio',
+            'artists.required' => 'L\'artista è obbligatorio',
+            'writers.required' => 'Lo scrittore è obbligatorio',
+        ];
+    }
 }
 
  	 	 	 	 	 	 	 	
