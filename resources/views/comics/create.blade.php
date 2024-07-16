@@ -11,7 +11,7 @@
             </div>
             <h2>Add Comics:</h2>
             <hr>
-            
+
             {{--? messagio di avviso degli errori nella compilazione del form --}}
             @if ($errors ->any())
             <div class="alert alert-danger">
@@ -30,8 +30,8 @@
                     <label for="title" class="form-label">Title: </label>
                     <input type="text" class="form-control @if($errors->get('title')) is-invalid @endif" value="{{ old('title')}}" id="title" name="title">
                     @if ($errors->get('title'))
-                        @foreach ($errors->get('title') as $message)
-                            <div class="invalid-feedback">
+                    @foreach ($errors->get('title') as $message)
+                    <div class="invalid-feedback">
                                 {{$message}}
                             </div>
                         @endforeach                        
@@ -61,15 +61,17 @@
                   </div>
                 <div class="mb-3">
                     <label for="price" class="form-label">Price: </label>
-                    {{--todo: è una stringa nel DB  --}}
-                    <input type="number" step="0.01" class="form-control @if($errors->get('price')) is-invalid @endif"  value="{{ old('price')}}" id="price" name="price">
-                    @if ($errors->get('price'))
-                        @foreach ($errors->get('price') as $message)
-                            <div class="invalid-feedback">
+                    <div class="group">
+                        <span class="group__text">$</span>
+                        <input type="number" step="0.01" class="form-control group__input @if($errors->get('price')) is-invalid @endif"  value="{{ old('price')}}" id="price" name="price">
+                        @if ($errors->get('price'))
+                            @foreach ($errors->get('price') as $message)
+                            <div class="invalid-feedback message__error">
                                 {{$message}}
                             </div>
-                        @endforeach                        
-                    @endif
+                            @endforeach                        
+                        @endif
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="series" class="form-label">Series: </label>

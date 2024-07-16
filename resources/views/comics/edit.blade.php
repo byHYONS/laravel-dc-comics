@@ -66,16 +66,15 @@
                 <div class="mb-3">
                     <label for="price" class="form-label">Price: </label>
                     <div class="group">
-                        {{--todo: il prezzo è una stringa  --}}
-                        {{-- <span class="group__text">$</span> --}}
-                        <input type="text" class="form-control group__input @if($errors->get('price')) is-invalid @endif" id="price" name="price" value="{{ old('price', $comic->price) }}">
+                        <span class="group__text">$</span>
+                        <input type="number" step="0.00" class="form-control group__input @if($errors->get('price')) is-invalid @endif" id="price" name="price" value="{{ old('price', $comic->price) }}">                 
                         @if ($errors->get('price'))
-                        @foreach ($errors->get('price') as $message)
-                            <div class="invalid-feedback">
-                                {{$message}}
-                            </div>
-                        @endforeach                        
-                    @endif
+                            @foreach ($errors->get('price') as $message)
+                                <div class="invalid-feedback  message__error">
+                                    {{$message}}
+                                </div>
+                            @endforeach                        
+                        @endif
                     </div>
                 </div>
                 <div class="mb-3">

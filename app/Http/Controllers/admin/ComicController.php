@@ -38,7 +38,7 @@ class ComicController extends Controller
         $data = $request->validated();
 
         //? aggiungo il dollaro al prezzo:
-        // $formattedPrice = '$' . $data['price'];
+        $data['price'] = '$' . number_format($data['price'], 2);
         //? Trasformo la data utilizzando Carbon:
         // $formattedDate = Carbon::createFromFormat('d/m/Y', $data['sale_date'])->format('Y-m-d');
 
@@ -73,6 +73,10 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
+        //? conertire la stringa in float per visualizzare il prezzo sull'input:
+        $priceWithoutDollar = str_replace('$', '', $comic->price);
+        $comic->price = (float) $priceWithoutDollar;
+        
         return view('comics.edit', compact('comic'));
 
     }
@@ -84,6 +88,9 @@ class ComicController extends Controller
     {
         //? dati validati:
         $data = $request->validated();
+
+        $data['price'] = '$' . number_format($data['price'], 2);
+
         $comic->update($data);
 
         return redirect()->route('comics.show', $comic->id);
