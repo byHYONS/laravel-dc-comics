@@ -11,6 +11,7 @@
             </div>
             <h2>Add Comics:</h2>
             <hr>
+            
             {{--? messagio di avviso degli errori nella compilazione del form --}}
             @if ($errors ->any())
             <div class="alert alert-danger">
@@ -19,8 +20,7 @@
                     <li>{{$message}}</li>    
                     @endforeach
                 </ul>
-            </div>
-                
+            </div>               
             @endif
 
             <form action="{{route('comics.store')}}" method="POST">

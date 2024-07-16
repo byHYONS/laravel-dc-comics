@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
 use App\Models\Comic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -33,8 +34,8 @@ class ComicController extends Controller
      */
     public function store(StoreComicRequest $request)
     {
-          
-        $data = $request->all();
+        //? dati validati: 
+        $data = $request->validated();
 
         //? aggiungo il dollaro al prezzo:
         // $formattedPrice = '$' . $data['price'];
@@ -79,9 +80,10 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicRequest $request, Comic $comic)
     {
-        $data = $request->all();
+        //? dati validati:
+        $data = $request->validated();
         $comic->update($data);
 
         return redirect()->route('comics.show', $comic->id);
