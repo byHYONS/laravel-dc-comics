@@ -1,5 +1,6 @@
 {{--? pagina del dettaglio card --}}
 
+{{--? holding per modale --}}
 <div class="screen holding">
  
 @extends('layouts.app')

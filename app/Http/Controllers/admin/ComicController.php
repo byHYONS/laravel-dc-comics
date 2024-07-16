@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreComicRequest;
 use App\Models\Comic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -30,12 +31,12 @@ class ComicController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
           
         $data = $request->all();
 
-        //? aggiungo il dollaro al prezzo
+        //? aggiungo il dollaro al prezzo:
         // $formattedPrice = '$' . $data['price'];
         //? Trasformo la data utilizzando Carbon:
         // $formattedDate = Carbon::createFromFormat('d/m/Y', $data['sale_date'])->format('Y-m-d');
