@@ -38,6 +38,7 @@ class StoreComicRequest extends FormRequest
     {
         return [
             'title.required' => 'Il titolo è obbligatorio',
+            'title.unique' => 'Il titolo è già esistente',
             'title.min' => 'Il titolo deve essere più di 3 caratteri',
             'title.max' => 'Il titolo deve essere lunggo massimo 100 caratteri',
             'description.required' => 'La descrizione è obbligatoria',

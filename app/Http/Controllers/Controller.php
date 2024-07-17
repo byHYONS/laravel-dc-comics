@@ -15,7 +15,9 @@ class Controller extends BaseController
 
         $data = 'sono un dato passato alla pagina';
 
-        return view('index', compact('data'));
+        // return view('index', compact('data'));
+        
+        return redirect()->route('comics.index');
 
     }
 

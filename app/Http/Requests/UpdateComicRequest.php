@@ -23,14 +23,13 @@ class UpdateComicRequest extends FormRequest
     public function rules(): array
     {
         return [
-            // 'title' => [
-            //     'required',
-            //     'string',
-            //     'min:3',
-            //     'max:100',
-            //     Rule::unique('comics', 'title')->ignore($this->route('comic')),
-            // ],
-            'title' => 'required|min:3|max:100|string',
+            'title' => [
+                'required',
+                'string',
+                'min:3',
+                'max:100',
+                Rule::unique('comics', 'title')->ignore($this->comics),
+            ],
             'description' => 'required|string|max:3500',
             'thumb' => 'required|string|max:512',
             'price' => 'required|numeric|min:1|max:99999',
